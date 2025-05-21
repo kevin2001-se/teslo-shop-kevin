@@ -1,5 +1,6 @@
 import { titleFont } from '@/config/fonts';
 import { LoginForm } from './ui/LoginForm';
+import { Suspense } from 'react';
 
 export default function LoginPage() {
   return (
@@ -7,7 +8,9 @@ export default function LoginPage() {
 
       <h1 className={ `${ titleFont.className } text-4xl mb-5` }>Ingresar</h1>
 
-      <LoginForm />
+      <Suspense fallback={<div>Cargando formulario...</div>}>
+        <LoginForm />
+      </Suspense>
     </div>
   );
 }
